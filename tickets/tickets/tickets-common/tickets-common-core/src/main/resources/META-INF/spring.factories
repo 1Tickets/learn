@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jiaxi.tickets.common.core.config.JacksonConfiguration,\
+  com.jiaxi.tickets.common.core.config.RedisTemplateConfiguration,\
+  com.jiaxi.tickets.common.core.config.RestTemplateConfiguration,\
+  com.jiaxi.tickets.common.core.util.SpringContextHolder,\
+  com.jiaxi.tickets.common.core.config.WebMvcConfiguration

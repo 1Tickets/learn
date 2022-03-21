@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.jiaxi.tickets.common.log.LogAutoConfiguration
+org.springframework.boot.env.EnvironmentPostProcessor=\
+    com.jiaxi.tickets.common.log.init.ApplicationLoggerInitializer

@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jiaxi.tickets.common.security.service.TicketsUserDetailsServiceImpl,\
+  com.jiaxi.tickets.common.security.service.TicketsAppUserDetailsServiceImpl,\
+  com.jiaxi.tickets.common.security.component.TicketsSecurityInnerAspect,\
+  com.jiaxi.tickets.common.security.component.TicketsTokenStoreAutoConfiguration,\
+  com.jiaxi.tickets.common.security.component.TicketsTokenStoreAutoCleanSchedule,\
+  com.jiaxi.tickets.common.security.component.TicketsSecurityMessageSourceConfiguration
+

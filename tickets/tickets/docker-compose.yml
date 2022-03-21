@@ -1,0 +1,93 @@
+version: '3'
+services:
+  tickets-mysql:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    container_name: tickets-mysql
+    image: tickets-mysql
+    ports:
+      - 3306:3306
+
+  tickets-redis:
+    image: redis:6.2.6
+    ports:
+      - 6379:6379
+    restart: always
+    container_name: tickets-redis
+    hostname: tickets-redis
+
+  tickets-register:
+    build:
+      context: ./tickets-register
+    restart: always
+    ports:
+      - 8848:8848
+    container_name: tickets-register
+    hostname: tickets-register
+    image: tickets-register
+
+  tickets-gateway:
+    build:
+      context: ./tickets-gateway
+    restart: always
+    ports:
+      - 9999:9999
+    container_name: tickets-gateway
+    hostname: tickets-gateway
+    image: tickets-gateway
+
+  tickets-auth:
+    build:
+      context: ./tickets-auth
+    restart: always
+    container_name: tickets-auth
+    hostname: tickets-auth
+    image: tickets-auth
+
+  tickets-upms:
+    build:
+      context: ./tickets-upms/tickets-upms-biz
+    restart: always
+    container_name: tickets-upms
+    hostname: tickets-upms
+    image: tickets-upms
+
+  tickets-monitor:
+    build:
+      context: ./tickets-visual/tickets-monitor
+    restart: always
+    ports:
+      - 5001:5001
+    container_name: tickets-monitor
+    hostname: tickets-monitor
+    image: tickets-monitor
+
+  tickets-sentinel:
+    build:
+      context: ./tickets-visual/tickets-sentinel-dashboard
+    restart: always
+    image: tickets-sentinel
+    container_name: tickets-sentinel
+    ports:
+      - 5003:5003
+
+  tickets-codegen:
+    build:
+      context: ./tickets-visual/tickets-codegen
+    restart: always
+    container_name: tickets-codegen
+    hostname: tickets-codegen
+    image: tickets-codegen
+
+  tickets-job:
+    build:
+      context: ./tickets-visual/tickets-xxl-job-admin
+    restart: always
+    container_name: tickets-job
+    hostname: tickets-job
+    image: tickets-job
+    ports:
+      - 5004:5004

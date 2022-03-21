@@ -1,0 +1,6 @@
+com.jiaxi.tickets.common.feign.TicketsFeignAutoConfiguration=\
+  com.jiaxi.tickets.admin.api.feign.RemoteDictService,\
+  com.jiaxi.tickets.admin.api.feign.RemoteDeptService,\
+  com.jiaxi.tickets.admin.api.feign.RemoteLogService,\
+  com.jiaxi.tickets.admin.api.feign.RemoteTokenService,\
+  com.jiaxi.tickets.admin.api.feign.RemoteUserService
