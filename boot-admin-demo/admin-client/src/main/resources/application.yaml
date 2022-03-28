@@ -1,0 +1,24 @@
+# 端口
+server:
+  port: 9088
+
+
+#开放端点用于SpringBoot Admin的监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: admin-client # 给client应用取个名字
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:5000   #这里配置admin server 的地址
+
+logging:
+  file:
+    name: admin-client.log  #配置生成日志文件名称
